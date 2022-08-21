@@ -11,6 +11,7 @@ body {
   text-align: center;
   background-color: aliceblue;
   color: #333;
+  padding: 20px;
 }
 
 .container {
@@ -34,24 +35,38 @@ body {
 .grid-container {
   margin: 0;
   padding: 0;
-  background-color: #888888;
-  box-shadow: 5px 5px 5px #333, -5px 0 .4em #333;
+  background-color: #ddeaff30;
+  box-shadow: 5px 5px 5px #333, -5px 0 0.4em #333;
   /* border: solid 1px blue; */
   height: 510px;
   flex-basis: 510px;
   display: flex;
   flex-wrap: wrap;
-
-
 }
 
 .grid-element {
   margin: 0;
   padding: 0;
-  /* border: solid 1px #333; */
-  /* width: 100px; */
-  /* flex: auto; */
+  border-left: solid 1px;
+  border-top: solid 1px;
 }
+.grid-container .inherit {
+  background-color: inherit;
+}
+.grid-container .black {
+  background-color: black;
+}
+.grid-container .red {
+  background-color: red;
+}
+.grid-container .blue {
+  background-color: blue;
+}
+/* .grid-element.custom-color {
+  background-color:;
+} */
+
+ 
 
 .reset {
   display: block;
@@ -60,6 +75,62 @@ body {
   color: inherit;
   font-family: inherit;
   font-weight: bold;
+  border: 1px solid;
+}
+
+.color-text {
+  padding: 15px 0;
+  padding-top: 20px;
+}
+
+.colors-container {
+  display: flex;
+  gap: 15px;
+}
+
+.colors-container button {
+  padding: 5px;
+  width: 80px;
+  color: inherit;
+  font-family: inherit;
+  font-weight: bold;  
+}
+
+
+.custom-color-container {
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.custom-color-container label {
+  font-weight: 600;
+}
+
+#color-picker {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-color: #77ffcf;
+  height: 60px;
+  width: 60px;
+
+}
+
+#color-picker::-webkit-color-swatch {
+  border-radius: 100%;
+  border: 1px solid;
+  box-shadow: 1px 1px 1px #333;
+}
+
+#color-picker::-moz-color-swatch {
+  border-radius: 50%;
+  border: 1px solid;
+  box-shadow: 1px 1px 1px #333;
 }
 
 /************************* RANGE SLIDER **************************/
