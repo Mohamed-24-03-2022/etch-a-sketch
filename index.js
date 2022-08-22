@@ -30,7 +30,7 @@ slider.addEventListener("input", () => {
     createGrid(elementWidth);
 });
 
-// first executed when loading the page
+// first executed when loading the page to create the grid
 const createGrid = (width = "31.88") => {
     for (let i = 0; i < slider.value ** 2; i++) {
         const newDiv = document.createElement("div");
@@ -68,7 +68,6 @@ colorPicker.addEventListener("click", () => {
     resetGridColor();
     addMouseEvent(colorPicker.value);
 });
-
 rgbBtn.addEventListener("click", () => {
     resetGridColor();
     const gridElements = document.querySelectorAll(".grid-element");
@@ -79,14 +78,13 @@ rgbBtn.addEventListener("click", () => {
         });
     }
 });
-
 gradBtn.addEventListener("click", () => {
     resetGridColor();
     const gridElements = document.querySelectorAll(".grid-element");
     let darker = 100;
+    const hue = Math.floor(Math.random() * 360);
     for (const element of gridElements) {
         element.addEventListener("mouseover", () => {
-            const hue = Math.floor(Math.random() * 360);
             darker -= 2;
             element.style.backgroundColor = `hsl(${hue}, 100%, ${darker}%)`;
         });
