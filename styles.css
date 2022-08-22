@@ -12,32 +12,46 @@ body {
   background-color: aliceblue;
   color: #333;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
-  border: solid 1px;
+  /* border: solid 1px black; */
   height: 600px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex: 1;
 }
 .settings {
   margin: 0;
   padding: 25px;
-  border: solid 1px red;
-  height: 400px;
+  border: solid 1px grey;
+  box-shadow: 4px 2px 2px #443a3a, -5px 0 0.4em #443a3a;
+  height: 510px;
   flex-basis: 400px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
+
+.settings h2 {
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+.settings p {
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
 .grid-container {
   margin: 0;
   padding: 0;
   background-color: #ddeaff30;
   box-shadow: 5px 5px 5px #333, -5px 0 0.4em #333;
-  /* border: solid 1px blue; */
   height: 510px;
   flex-basis: 510px;
   display: flex;
@@ -56,17 +70,6 @@ body {
 .grid-container .black {
   background-color: black;
 }
-.grid-container .red {
-  background-color: red;
-}
-.grid-container .blue {
-  background-color: blue;
-}
-/* .grid-element.custom-color {
-  background-color:;
-} */
-
- 
 
 .reset {
   display: block;
@@ -76,6 +79,7 @@ body {
   font-family: inherit;
   font-weight: bold;
   border: 1px solid;
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 }
 
 .color-text {
@@ -93,20 +97,35 @@ body {
   width: 80px;
   color: inherit;
   font-family: inherit;
-  font-weight: bold;  
+  font-weight: bold;
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 }
-
 
 .custom-color-container {
   margin: 25px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 10px;
 }
 .custom-color-container label {
   font-weight: 600;
+  font-size: 1.375rem;
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 }
+
+footer {
+  margin: 0;
+  margin-top: auto;
+  padding: 0;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+/********************* COLOR picker **********************/
 
 #color-picker {
   -webkit-appearance: none;
@@ -117,10 +136,8 @@ body {
   cursor: pointer;
   border-color: #77ffcf;
   height: 60px;
-  width: 60px;
-
+  width: 80px;
 }
-
 #color-picker::-webkit-color-swatch {
   border-radius: 100%;
   border: 1px solid;
