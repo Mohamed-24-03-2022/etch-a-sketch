@@ -53,12 +53,10 @@ resetButton.addEventListener("click", resetGridColor);
 
 // buttons listener
 const addMouseEvent = (color) => {
-    const gridElements = document.querySelectorAll(".grid-element");
-    for (const element of gridElements) {
-        element.addEventListener("mouseover", () => {
-            element.style.backgroundColor = color;
-        });
-    }
+    //* Using event delegation for the grid elements
+    gridContainer.addEventListener("mouseover", (e) => {
+        e.target.style.backgroundColor = color;
+    });
 }
 blackBtn.addEventListener("click", () => {
     resetGridColor();
@@ -68,25 +66,23 @@ colorPicker.addEventListener("click", () => {
     resetGridColor();
     addMouseEvent(colorPicker.value);
 });
+
 rgbBtn.addEventListener("click", () => {
     resetGridColor();
-    const gridElements = document.querySelectorAll(".grid-element");
-    for (const element of gridElements) {
-        element.addEventListener("mouseover", () => {
-            const hue = Math.floor(Math.random() * 360);
-            element.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
-        });
-    }
+    //* Using event delegation for the grid elements
+    gridContainer.addEventListener("mouseover", (e) => {
+        const hue = Math.floor(Math.random() * 360);
+        e.target.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+    });
 });
 gradBtn.addEventListener("click", () => {
     resetGridColor();
-    const gridElements = document.querySelectorAll(".grid-element");
-    let darker = 100;
+    let lightness = 100;
     const hue = Math.floor(Math.random() * 360);
-    for (const element of gridElements) {
-        element.addEventListener("mouseover", () => {
-            darker -= 2;
-            element.style.backgroundColor = `hsl(${hue}, 100%, ${darker}%)`;
-        });
-    }
+    //* Using event delegation for the grid elements
+    gridContainer.addEventListener("mouseover", (e) => {
+        lightness -= 0.5;
+        e.target.style.backgroundColor = `hsl(${hue}, 100%, ${lightness}%)`;
+
+    });
 });
