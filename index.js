@@ -62,7 +62,7 @@ blackBtn.addEventListener("click", () => {
     resetGridColor();
     addMouseEvent("black");
 });
-colorPicker.addEventListener("click", () => {
+colorPicker.addEventListener("input", () => {
     resetGridColor();
     addMouseEvent(colorPicker.value);
 });

@@ -18,7 +18,7 @@ body {
 }
 
 .heading {
-  text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   font-size: 5rem;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 .settings h2 {
-  text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .settings p {
   margin: 0;
@@ -57,7 +57,8 @@ body {
   background-color: #ddeaff30;
   box-shadow: 5px 5px 5px #333, -5px 0 0.4em #333;
   height: 510px;
-  flex-basis: 510px;
+  width: 510px;
+  flex-basis: 1;
   display: flex;
   flex-wrap: wrap;
 }
@@ -83,7 +84,7 @@ body {
   font-family: inherit;
   font-weight: bold;
   border: 1px solid;
-  text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .color-text {
@@ -102,7 +103,7 @@ body {
   color: inherit;
   font-family: inherit;
   font-weight: bold;
-  text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .custom-color-container {
@@ -116,7 +117,7 @@ body {
 .custom-color-container label {
   font-weight: 600;
   font-size: 1.375rem;
-  text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -241,4 +242,21 @@ footer p {
 }
 #range-slider:focus::-ms-fill-upper {
   background: #333;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .grid-container {
+    width: 320px;
+    height: 320px;
+  }
 }
